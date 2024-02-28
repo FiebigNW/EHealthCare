@@ -1,17 +1,18 @@
+import java.util.ArrayList;
 
 public class Hospital {
 
 	String name;
-	HospitalRoom[] patientRooms;
+	static ArrayList<HospitalRoom> patientRooms;
 	int staffCount;
 	String location;
 	int departments;
 	
 	
-	public Hospital(String name, HospitalRoom[] patientRooms, int staffCount, String location, int departments) {
+	public Hospital(String name, ArrayList<HospitalRoom> patientRooms, int staffCount, String location, int departments) {
 		
 		this.name = name;
-		this.patientRooms = patientRooms;
+		Hospital.patientRooms = patientRooms;
 		this.staffCount = staffCount;
 		this.location = location;
 		this.departments = departments;
@@ -21,8 +22,8 @@ public class Hospital {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public void setPatientsRooms(HospitalRoom[] patientRooms) {
-		this.patientRooms = patientRooms;
+	public void setPatientsRooms(ArrayList<HospitalRoom> patientRooms) {
+		Hospital.patientRooms = patientRooms;
 	}
 	public void setStaffCount(int staffCount) {
 		this.staffCount = staffCount;
@@ -37,7 +38,7 @@ public class Hospital {
 	public String getName() {
 		return name;
 	}
-	public HospitalRoom[] getPatientRooms() {
+	public ArrayList<HospitalRoom> getPatientRooms() {
 		return patientRooms;
 	}
 	public int getStaffCount() {
@@ -50,9 +51,19 @@ public class Hospital {
 		return departments;
 	}
 	
+	public void addHospitalRoom(HospitalRoom rooms) {
+		patientRooms.add(rooms);
+	}
 	
+	public void removeHospitalRoom(HospitalRoom rooms) {
+		patientRooms.remove(rooms);
+	}
 	
-	
+	public static void printHospitalRooms() {
+		for(int i = 0; i < patientRooms.size(); i++){
+			System.out.println("  " + (i + 1) + ". " + patientRooms.get(i).getRoomNumber());
+		}
+	}
 	
 	
 }
