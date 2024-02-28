@@ -1,13 +1,16 @@
+import java.util.ArrayList;
 
 public class HospitalRoom {
 
 	int roomNumber;
-	Patient[] patients;
+	int size;
+	ArrayList<Patient> patients;
 	
 	
-	public HospitalRoom(int roomNumber, Patient[] patients) {
+	public HospitalRoom(int roomNumber, int size, ArrayList<Patient> patients) {
 		
 		this.roomNumber = roomNumber;
+		this.size = size;
 		this.patients = patients;
 		
 	}
@@ -16,7 +19,11 @@ public class HospitalRoom {
 		this.roomNumber = roomNumber;
 	}
 	
-	public void setPatients(Patient[] patients) {
+	public void setRoomSize(int size) {
+		this.size = size;
+	}
+	
+	public void setPatients(ArrayList<Patient> patients) {
 		this.patients = patients;
 	}
 	
@@ -25,8 +32,26 @@ public class HospitalRoom {
 		return roomNumber;
 	}
 	
-	public Patient[] getPatients() {
+	public int getRoomSize() {
+		return size;
+	}
+	
+	public ArrayList<Patient> getPatients() {
 		return patients;
 	}
+	
+	public void addPatientToRoom(Patient patient) {
+		if(patients.size() == size) {
+			System.out.println("Max patients for this room.");
+		} else {
+			patients.add(patient);
+		}
+	}
+	
+	public void removePatientFromRoom(Patient patient) {
+		patients.remove(patient);
+	}
+	
+	
 	
 }
