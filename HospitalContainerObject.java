@@ -1,3 +1,5 @@
+package EHealthCarePackage;
+
 import java.util.ArrayList;
 
 public class HospitalContainerObject {
@@ -16,7 +18,7 @@ public class HospitalContainerObject {
 		HospitalContainerObject.hospitalContainer = hospitalContainer;
 	}
 	
-	public static void addHospital(Hospital hospital) {
+	public void addHospital(Hospital hospital) {
 		hospitalContainer.add(hospital);
 	}
 	

@@ -1,3 +1,5 @@
+package EHealthCarePackage;
+
 import java.util.ArrayList;
 
 public class Test implements MenuMethods {

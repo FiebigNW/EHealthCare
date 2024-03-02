@@ -1,3 +1,4 @@
+package EHealthCarePackage;
 
 public class Patient {
 
@@ -56,6 +57,8 @@ public class Patient {
 	public String getNotes() {
 		return notes;
 	}
-	
+	public void printPatientsInfo(){
+		System.out.println("Name: " + name + " Id: " + id + " Age: " + age + " Gender: " + gender + " DOB: " + dateOfBirth + " Notes: " + notes);
+	}
 	
 }

@@ -1,3 +1,5 @@
+package EHealthCarePackage;
+
 import java.util.ArrayList;
 
 public class HospitalRoom {
@@ -52,6 +54,10 @@ public class HospitalRoom {
 		patients.remove(patient);
 	}
 	
-	
+	public void printPatientsInRoom() {
+		for(int i = 0; i < patients.size(); i++){
+			System.out.println("  " + (i + 1) + ". " + patients.get(i).getName());
+		}
+	}
 	
 }

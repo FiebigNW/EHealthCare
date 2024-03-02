@@ -1,3 +1,4 @@
+package EHealthCarePackage;
 import java.util.ArrayList;
 
 public class Hospital {
@@ -59,7 +60,7 @@ public class Hospital {
 		patientRooms.remove(rooms);
 	}
 	
-	public static void printHospitalRooms() {
+	public void printHospitalRooms() {
 		for(int i = 0; i < patientRooms.size(); i++){
 			System.out.println("  " + (i + 1) + ". " + patientRooms.get(i).getRoomNumber());
 		}
